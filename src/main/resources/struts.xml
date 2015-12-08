@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+
+    <constant name="struts.custom.i18n.resources" value="global" />
+    <constant name="struts.devMode" value="true" />
+	
+    <package name="default" namespace="/" extends="struts-default, json-default">
+        <action name="">
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+		
+        <action name="index" method="main" class="br.com.unisc.action.SnmpClientAction">
+            <result name="success">pages/index.jsp</result>
+        </action>
+        
+        <action name="loadMemGraph" method="loadMemGraph" class="br.com.unisc.action.GraphAction">
+            <result name="success" type="json">
+            </result>
+        </action>
+        
+        <action name="loadDiskGraph" method="loadDiskGraph" class="br.com.unisc.action.GraphAction">
+            <result name="success" type="json">
+            </result>
+        </action>
+    </package>
+	
+</struts>

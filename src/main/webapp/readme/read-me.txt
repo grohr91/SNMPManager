@@ -1,0 +1,2 @@
+No Windows:
+    Ativar recurso SNMP: http://kb.paessler.com/en/topic/663-how-do-i-install-the-snmp-service-on-windows-systems
